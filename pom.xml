@@ -11,7 +11,7 @@
 	<packaging>pom</packaging>
 	
 	<modules>
-		<module>passive</module>
+		<module>microservicio-cicd</module>
 	</modules>
 	
 </project>
