@@ -1,0 +1,18 @@
+server:
+  port: 28084
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pierreobregon/config-data.git
+          #searchPaths: config-data
+          username: pierreobregon
+          password: 123123123123
+  security:
+    user:
+      name: root
+      password: root
