@@ -12,13 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Step 1 actions/checkout@v3
+    - name: Step 1 actions/checkout@v2
       uses: actions/checkout@v3
     - name: Step 2 set up JDK 11
       uses: actions/setup-java@v1
       with:
         java-version: 11
-        distribution: 'temurin'
     - name: Mave Package
       run: mvn -B clean package -DskipTests
     - name: Maven Verify
