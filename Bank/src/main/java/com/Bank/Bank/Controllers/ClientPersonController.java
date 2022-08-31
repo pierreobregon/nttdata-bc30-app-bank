@@ -16,7 +16,8 @@ import java.util.Date;
 import static com.Bank.Bank.Model.Entities.Client.SEQUENCE_NAME;
 
 @RestController
-@RequestMapping("api/ClientPerson/")
+//@RequestMapping("api/ClientPerson/")
+@RequestMapping("ClientPerson/")
 public class ClientPersonController {
 
     @Autowired

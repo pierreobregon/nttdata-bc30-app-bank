@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: api-passive
+  cloud:
+    config:
+      uri: http://localhost:28084
+      username: root
+      password: root
+#server:
+#  port: 18085
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka

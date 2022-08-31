@@ -1,9 +1,14 @@
 package com.bootcamp.passive.models.documents.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.mongodb.repository.query.StringBasedMongoQuery;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Result {
+		
     private String message;
+    
 }

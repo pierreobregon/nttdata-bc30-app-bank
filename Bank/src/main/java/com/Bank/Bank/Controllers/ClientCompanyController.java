@@ -20,7 +20,8 @@ import static com.Bank.Bank.Model.Entities.Client.SEQUENCE_NAME;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/ClientCompany/")
+//@RequestMapping("api/ClientCompany/")
+@RequestMapping("ClientCompany/")
 public class ClientCompanyController {
 
     @Autowired

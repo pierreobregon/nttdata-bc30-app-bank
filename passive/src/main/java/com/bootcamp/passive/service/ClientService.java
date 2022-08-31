@@ -14,7 +14,7 @@ public class ClientService {
     private static final Logger log = LoggerFactory.getLogger(ClientService.class);
 
     public Mono<ClientCompany> FindClientCompanyId(String id){
-        String url = "http://localhost:8080/api/ClientCompany/"+id;
+        String url = "http://localhost:18080/ClientCompany/"+id;
         Mono<ClientCompany> oClientCompanyMono = WebClient.create()
                 .get()
                 .uri(url)
@@ -25,7 +25,7 @@ public class ClientService {
     }
 
     public Mono<ClientPerson> FindClientPersonId(String id){
-        String url = "http://localhost:8080/api/ClientPerson/"+id;
+        String url = "http://localhost:18080/ClientPerson/"+id;
         Mono<ClientPerson> oCLientPersonMono = WebClient.create()
                 .get()
                 .uri(url)

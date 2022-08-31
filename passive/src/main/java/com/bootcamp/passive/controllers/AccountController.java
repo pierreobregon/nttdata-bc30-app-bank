@@ -3,6 +3,8 @@ package com.bootcamp.passive.controllers;
 import com.bootcamp.passive.models.documents.documents.Account;
 import com.bootcamp.passive.models.documents.entities.Result;
 import com.bootcamp.passive.service.IAccountService;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -76,7 +78,9 @@ public class AccountController {
      * @param oAccount
      * @return
      */
+    
     @PostMapping("RegisterSavingsAccount/")
+    @CircuitBreaker(name="ClientCompany", fallbackMethod = "fallBackGetClientCompany1General")
     public Mono<Result> RegisterSavingAccount(@RequestBody Account oAccount){
         return accountService.RegisterAccountSaving(oAccount, "Savings");
     }
@@ -99,6 +103,10 @@ public class AccountController {
     @PostMapping("RegisterFixedTermsAccount/")
     public Mono<Result> RegisterFixedTermsAccount(@RequestBody Account oAccount){
         return accountService.RegisterAccountSaving(oAccount, "Fixed Terms");
+    }
+    
+    public Mono<String> fallBackGetClientCompany1General(RuntimeException runtimeException){
+        return Mono.just("Microservicio RegisterSavingsAccount no esta respondiendo");
     }
 
 }
