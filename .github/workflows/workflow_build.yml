@@ -18,8 +18,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Mave Package
-      run: mvn -B -X clean package -DskipTests
     - name: Maven Verify
       run: mvn -B clean verify
       
